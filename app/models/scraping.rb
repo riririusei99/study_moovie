@@ -36,9 +36,16 @@ class Scraping
     title = page.at('h2.entry-title').inner_text
     # 画像がない場合はnilを返す
     image_url = page.at('.entry-content img').get_attribute('src') if page.at('.entry-content img') 
+    # 監督
+    director = page.at('.review_details .director span').inner_text if page.at('.review_details .director span')
+    # あらすじ
+    detail = page.at('.entry-content p').inner_text if page.at('.entry-content p')
+    # 公開日
+    open_date = page.at('.review_details .date span').inner_text if page.at('.review_details .date span')
 
     # インスタンス作成・保存
-    product = Product.where(title: title, image_url: image_url).first_or_initialize
+    product = Product.where(title: title, image_url: image_url, director: director, detail: detail, open_date: open_date).first_or_initialize
+    # puts product
     product.save
   end
 end
