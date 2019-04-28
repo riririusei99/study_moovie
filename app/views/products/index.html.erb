@@ -20,7 +20,11 @@
                       </h3>
                       <p class="text-small">
                         <span class="rating-star">
-                          <i class="star-actived rate-[ここに評価を表示]0"></i>
+                          <% if product.reviews.present? %>
+                            <i class="star-actived rate-<%= product.reviews.average(:rate).round %>0"></i>
+                          <% else %>
+                            <i class="star-actived rate-0"></i>
+                          <% end  %>
                         </span>
                       </p>
                     </div>
