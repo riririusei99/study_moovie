@@ -16,12 +16,8 @@ class Scraping
       # 「次へ」を表すタグを取得
       next_tag = current_page.at('.pagination .next a')
       # next_linkがなかったらwhile文を抜ける
-      if next_tag == nil then
-        break
-      # そのタグからhref属性の値を取得
-      else
-        next_url = next_tag.get_attribute('href')
-      end
+      break unless next_tag
+      next_url = next_tag.get_attribute('href')
     end
     links.each do |link|
       get_product(link)
@@ -49,6 +45,7 @@ class Scraping
     product.director = director
     product.detail = detail
     product.open_date = open_date
+    # puts product
     product.save
   end
 end
