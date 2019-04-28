@@ -44,8 +44,11 @@ class Scraping
     open_date = page.at('.review_details .date span').inner_text if page.at('.review_details .date span')
 
     # インスタンス作成・保存
-    product = Product.where(title: title, image_url: image_url, director: director, detail: detail, open_date: open_date).first_or_initialize
-    # puts product
+    product = Product.where(title: title).first_or_initialize
+    product.image_url = image_url
+    product.director = director
+    product.detail = detail
+    product.open_date = open_date
     product.save
   end
 end
