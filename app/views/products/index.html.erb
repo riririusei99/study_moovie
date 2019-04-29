@@ -19,13 +19,15 @@
                         <%= product.title %>
                       </h3>
                       <p class="text-small">
-                        <span class="rating-star">
-                          <% if product.reviews.present? %>
-                            <i class="star-actived rate-<%= product.reviews.average(:rate).round %>0"></i>
-                          <% else %>
+                        <% if product.reviews.present? %>
+                          <span class="rating-star">
+                            <i class="star-actived rate-<%= product.review_average %>0"></i>
+                          </span>
+                        <% else %>
+                          <span class="rating-star">
                             <i class="star-actived rate-0"></i>
-                          <% end  %>
-                        </span>
+                          </span>
+                        <% end  %>
                       </p>
                     </div>
                   </li>
