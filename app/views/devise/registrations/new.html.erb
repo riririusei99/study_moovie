@@ -1,4 +1,3 @@
-
 <div class="bgcolor-white pt1em pb1em" id="contents">  <div id="main_cnt_wrapper">
   <div id="yjContentsBody">
     <div class="yjContainer">
@@ -16,9 +15,9 @@
 
           <div class="label"><%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'パスワードを入力（確認）' %></div>
-
+ 
           <div class="label"><%= f.label :nickname %><br />
-          <%= f.text_field :nickname %></div>
+          <%= f.text_field :nickname, placeholder: 'ニックネームを入力(必須)' %></div>
           <div class="field">
           <%= f.file_field :image %>
           </div>
