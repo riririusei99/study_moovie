@@ -2,7 +2,8 @@ class Scraping
   def self.movie_urls
     links = []
     agent = Mechanize.new
-    domain = "http://review-movie.herokuapp.com"
+    domain = "http://sample.hogehoge.com"
+    # domain = "http://review-movie.herokuapp.com"
 
     # パスの部分を変数で定義(はじめは、空にしておきます)
     next_url = ""
