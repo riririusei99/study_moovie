@@ -43,3 +43,5 @@ gem 'pry-rails'
 
 # use mechanize
 gem 'mechanize'
+gem 'devise'
+gem 'mini_magick'
