@@ -16,3 +16,6 @@
 /tmp
 
 /Gemfile.lock
+
+# ActiveStorage
+/storage
